@@ -12,8 +12,6 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log(position.position - playerPosition.position);
-
         Vector3 targ = playerPosition.position;
         targ.z = 0f;
 
