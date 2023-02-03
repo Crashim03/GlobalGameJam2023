@@ -26,4 +26,13 @@ public class Enemy : MonoBehaviour
                       Mathf.Sin(position.rotation.eulerAngles.z * Mathf.Deg2Rad + Mathf.PI / 2)) * speed;
 
     }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            Destroy(this.gameObject);
+            Debug.Log("Collision");
+        }
+    }
 }
