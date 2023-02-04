@@ -13,17 +13,18 @@ public class Player : MonoBehaviour
     public GameObject R;
     public Slider slider;
     public float progressBarSpeed;
+    public float health;
 
     private bool can_grow = false;
 
     public void Evolve(InputAction.CallbackContext context)
     {
-        if(context.performed)
+        if (context.performed)
         {
             can_grow = true;
             Debug.Log("comecou");
         }
-        if(context.canceled)
+        if (context.canceled)
         {
             can_grow = false;
             Debug.Log("temrinou");
@@ -32,27 +33,27 @@ public class Player : MonoBehaviour
 
     public void Kill1(InputAction.CallbackContext context)
     {
-        if(context.performed)
+        if (context.performed && !can_grow)
         {
             Q.GetComponent<TriggerBehaviour>().KillEnemy();
             Debug.Log("Poe te nas putas minhoca de merda");
         }
-        
+
     }
 
     public void Kill2(InputAction.CallbackContext context)
     {
-        if(context.performed)
+        if (context.performed && !can_grow)
         {
             W.GetComponent<TriggerBehaviour>().KillEnemy();
             Debug.Log("Poe te nas putas minhoca de merda");
         }
-        
+
     }
 
     public void Kill3(InputAction.CallbackContext context)
     {
-        if(context.performed)
+        if (context.performed && !can_grow)
         {
             E.GetComponent<TriggerBehaviour>().KillEnemy();
             Debug.Log("Poe te nas putas minhoca de merda");
@@ -61,7 +62,7 @@ public class Player : MonoBehaviour
 
     public void Kill4(InputAction.CallbackContext context)
     {
-        if(context.performed)
+        if (context.performed && !can_grow)
         {
             R.GetComponent<TriggerBehaviour>().KillEnemy();
             Debug.Log("Poe te nas putas minhoca de merda");
@@ -71,13 +72,14 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         Slidin();
+        slider.value = health;
     }
 
     private void Slidin()
     {
-        if(can_grow)
+        if (can_grow)
         {
-            slider.value += progressBarSpeed;
+            health += progressBarSpeed;
         }
     }
 

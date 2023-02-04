@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     public Transform position;
     public Transform playerPosition;
     public GameObject Spawner;
+    public float damage = 10f;
 
     public float speed = 5f;
 
@@ -33,7 +34,7 @@ public class Enemy : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             Destroy(this.gameObject);
-            Debug.Log("Collision");
+            GameObject.Find("Player").GetComponent<Player>().health -= damage;
         }
     }
 
