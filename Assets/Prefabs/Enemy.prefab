@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8584495127620833207}
   - component: {fileID: 8584495127620833204}
   - component: {fileID: 8584495127620833205}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,4 +139,6 @@ MonoBehaviour:
   rb: {fileID: 8584495127620833204}
   position: {fileID: 1259700271529273366}
   playerPosition: {fileID: 0}
+  Spawner: {fileID: 0}
+  damage: 10
   speed: 5
