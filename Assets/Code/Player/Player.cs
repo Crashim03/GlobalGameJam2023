@@ -16,6 +16,11 @@ public class Player : MonoBehaviour
     public float health;
 
     private bool can_grow = false;
+    private Animator anim;
+
+    private void Awake() {
+        anim = GetComponent<Animator>();
+    }
 
     public void Evolve(InputAction.CallbackContext context)
     {
@@ -35,6 +40,7 @@ public class Player : MonoBehaviour
     {
         if (context.performed && !can_grow)
         {
+            anim.Play("Q_Attack_Anim");
             Q.GetComponent<TriggerBehaviour>().KillEnemy();
             Debug.Log("Poe te nas putas minhoca de merda");
         }
@@ -45,6 +51,7 @@ public class Player : MonoBehaviour
     {
         if (context.performed && !can_grow)
         {
+            anim.Play("W_Attack_Anim");
             W.GetComponent<TriggerBehaviour>().KillEnemy();
             Debug.Log("Poe te nas putas minhoca de merda");
         }
@@ -55,6 +62,7 @@ public class Player : MonoBehaviour
     {
         if (context.performed && !can_grow)
         {
+            anim.Play("E_Attack_Anim");
             E.GetComponent<TriggerBehaviour>().KillEnemy();
             Debug.Log("Poe te nas putas minhoca de merda");
         }
@@ -64,8 +72,16 @@ public class Player : MonoBehaviour
     {
         if (context.performed && !can_grow)
         {
+            anim.Play("R_Attack_Anim");
             R.GetComponent<TriggerBehaviour>().KillEnemy();
             Debug.Log("Poe te nas putas minhoca de merda");
+        }
+    }
+
+    private void Update() {
+        if(slider.value >= slider.maxValue)
+        {
+            anim.Play("Evolve_Idle_Anim");
         }
     }
 

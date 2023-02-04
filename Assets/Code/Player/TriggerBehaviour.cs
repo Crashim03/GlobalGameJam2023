@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TriggerBehaviour : MonoBehaviour
 {
+
     private bool can_kill = false;
     private GameObject enemy;
 
