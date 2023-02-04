@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
 
     private bool can_grow = false;
     private Animator anim;
+    private int reset_counter = 0;
 
     private void Awake() {
         anim = GetComponent<Animator>();
@@ -40,7 +41,17 @@ public class Player : MonoBehaviour
     {
         if (context.performed && !can_grow)
         {
-            anim.Play("Q_Attack_Anim");
+            if(anim.GetBool("Evolve") == true && anim.GetBool("Evolve1") == false)
+            {
+                anim.Play("Q_Attack_E1_Anim");
+            }
+            else if(anim.GetBool("Evolve1") == true)
+            {
+                anim.Play("Q_Attack_E2_Anim");
+            }
+            else{
+                anim.Play("Q_Attack_Anim");
+            }
             Q.GetComponent<TriggerBehaviour>().KillEnemy();
             Debug.Log("Poe te nas putas minhoca de merda");
         }
@@ -51,7 +62,17 @@ public class Player : MonoBehaviour
     {
         if (context.performed && !can_grow)
         {
-            anim.Play("W_Attack_Anim");
+            if(anim.GetBool("Evolve") == true && anim.GetBool("Evolve1") == false)
+            {
+                anim.Play("W_Attack_E1_Anim");
+            }
+            else if(anim.GetBool("Evolve1") == true)
+            {
+                anim.Play("W_Attack_E2_Anim");
+            }
+            else{
+                anim.Play("W_Attack_Anim");
+            }
             W.GetComponent<TriggerBehaviour>().KillEnemy();
             Debug.Log("Poe te nas putas minhoca de merda");
         }
@@ -62,7 +83,17 @@ public class Player : MonoBehaviour
     {
         if (context.performed && !can_grow)
         {
-            anim.Play("E_Attack_Anim");
+            if(anim.GetBool("Evolve") == true && anim.GetBool("Evolve1") == false)
+            {
+                anim.Play("E_Attack_E1_Anim");
+            }
+            else if(anim.GetBool("Evolve1") == true)
+            {
+                anim.Play("E_Attack_E2_Anim");
+            }
+            else{
+                anim.Play("E_Attack_Anim");
+            }
             E.GetComponent<TriggerBehaviour>().KillEnemy();
             Debug.Log("Poe te nas putas minhoca de merda");
         }
@@ -72,21 +103,35 @@ public class Player : MonoBehaviour
     {
         if (context.performed && !can_grow)
         {
-            anim.Play("R_Attack_Anim");
+            if(anim.GetBool("Evolve") == true && anim.GetBool("Evolve1") == false)
+            {
+                anim.Play("R_Attack_E1_Anim");
+            }
+            else if(anim.GetBool("Evolve1") == true)
+            {
+                anim.Play("R_Attack_E2_Anim");
+            }
+            else{
+                anim.Play("R_Attack_Anim");
+            }
             R.GetComponent<TriggerBehaviour>().KillEnemy();
             Debug.Log("Poe te nas putas minhoca de merda");
         }
     }
 
-    private void Update() {
-        if(slider.value >= slider.maxValue)
-        {
-            anim.Play("Evolve_Idle_Anim");
-        }
-    }
-
     private void FixedUpdate()
     {
+        if(health >= slider.maxValue)
+        {
+            if(reset_counter == 1)
+            {
+                anim.SetBool("Evolve1", true);
+            }
+            else{
+                anim.SetBool("Evolve", true);
+            }
+            ResetSlider();
+        }
         Slidin();
         slider.value = health;
     }
@@ -97,6 +142,12 @@ public class Player : MonoBehaviour
         {
             health += progressBarSpeed;
         }
+    }
+
+    private void ResetSlider()
+    {
+        reset_counter ++;
+        health = 10;
     }
 
 }
