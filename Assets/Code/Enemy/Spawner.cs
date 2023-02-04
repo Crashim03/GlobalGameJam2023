@@ -4,16 +4,13 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
+    public float speed = 1f;
     public GameObject enemyPrefab;
-
-    private void Start()
-    {
-        InvokeRepeating("SpawnEnemy", 0f, 1f);
-    }
 
     public void SpawnEnemy()
     {
         Instantiate(enemyPrefab, transform.position, Quaternion.identity);
         enemyPrefab.GetComponent<Enemy>().playerPosition = GameObject.Find("Player").transform;
+        enemyPrefab.GetComponent<Enemy>().speed = speed;
     }
 }
