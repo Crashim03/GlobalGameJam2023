@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     public Rigidbody2D rb;
     public Transform position;
     public Transform playerPosition;
+    public GameObject Spawner;
 
     public float speed = 5f;
 
@@ -34,5 +35,10 @@ public class Enemy : MonoBehaviour
             Destroy(this.gameObject);
             Debug.Log("Collision");
         }
+    }
+
+    private void OnDestroy()
+    {
+        Spawner.GetComponent<Spawner>().canSpawn = true;
     }
 }

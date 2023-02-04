@@ -6,11 +6,14 @@ public class Spawner : MonoBehaviour
 {
     public float speed = 1f;
     public GameObject enemyPrefab;
+    public bool canSpawn = true;
 
     public void SpawnEnemy()
     {
-        Instantiate(enemyPrefab, transform.position, Quaternion.identity);
-        enemyPrefab.GetComponent<Enemy>().playerPosition = GameObject.Find("Player").transform;
-        enemyPrefab.GetComponent<Enemy>().speed = speed;
+        GameObject enemy = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+        canSpawn = false;
+        enemy.GetComponent<Enemy>().playerPosition = GameObject.Find("Player").transform;
+        enemy.GetComponent<Enemy>().speed = speed;
+        enemy.GetComponent<Enemy>().Spawner = GameObject.Find(gameObject.name);
     }
 }
