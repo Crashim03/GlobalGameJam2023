@@ -37,9 +37,36 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Kill"",
+                    ""name"": ""Kill1"",
                     ""type"": ""Button"",
                     ""id"": ""981e9b6e-b572-42ef-b6c2-a26d2219f8ed"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Kill2"",
+                    ""type"": ""Button"",
+                    ""id"": ""d74312fd-e8e7-45b8-a366-5c9d73ea2f66"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Kill3"",
+                    ""type"": ""Button"",
+                    ""id"": ""9c04e540-bbe9-4ee6-91c9-9fefeb0d7616"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Kill4"",
+                    ""type"": ""Button"",
+                    ""id"": ""d8553d65-f32c-4a5c-8ea1-5e2f6c3deb06"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -65,40 +92,40 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
                     ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": ""Keyboard and Mouse"",
-                    ""action"": ""Kill"",
+                    ""action"": ""Kill1"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""2e70c261-ff48-45cd-bbe3-1ea6f4a28ef9"",
+                    ""id"": ""a16301f2-6709-496b-9d09-02976693b149"",
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": ""Keyboard and Mouse"",
-                    ""action"": ""Kill"",
+                    ""action"": ""Kill2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""35822b24-a13a-4e2c-8527-02c08f51a26c"",
+                    ""id"": ""9bd77a16-610e-42a0-8e70-a5ae7e0d19d8"",
                     ""path"": ""<Keyboard>/e"",
                     ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": ""Keyboard and Mouse"",
-                    ""action"": ""Kill"",
+                    ""action"": ""Kill3"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""34f10104-a1ce-4d0f-8a67-310e79810a3f"",
+                    ""id"": ""c1a1e99d-a916-4dce-8e44-f3fc8ae03979"",
                     ""path"": ""<Keyboard>/r"",
                     ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": ""Keyboard and Mouse"",
-                    ""action"": ""Kill"",
+                    ""action"": ""Kill4"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -127,7 +154,10 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Evolve = m_Player.FindAction("Evolve", throwIfNotFound: true);
-        m_Player_Kill = m_Player.FindAction("Kill", throwIfNotFound: true);
+        m_Player_Kill1 = m_Player.FindAction("Kill1", throwIfNotFound: true);
+        m_Player_Kill2 = m_Player.FindAction("Kill2", throwIfNotFound: true);
+        m_Player_Kill3 = m_Player.FindAction("Kill3", throwIfNotFound: true);
+        m_Player_Kill4 = m_Player.FindAction("Kill4", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -188,13 +218,19 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Player;
     private IPlayerActions m_PlayerActionsCallbackInterface;
     private readonly InputAction m_Player_Evolve;
-    private readonly InputAction m_Player_Kill;
+    private readonly InputAction m_Player_Kill1;
+    private readonly InputAction m_Player_Kill2;
+    private readonly InputAction m_Player_Kill3;
+    private readonly InputAction m_Player_Kill4;
     public struct PlayerActions
     {
         private @InputMaster m_Wrapper;
         public PlayerActions(@InputMaster wrapper) { m_Wrapper = wrapper; }
         public InputAction @Evolve => m_Wrapper.m_Player_Evolve;
-        public InputAction @Kill => m_Wrapper.m_Player_Kill;
+        public InputAction @Kill1 => m_Wrapper.m_Player_Kill1;
+        public InputAction @Kill2 => m_Wrapper.m_Player_Kill2;
+        public InputAction @Kill3 => m_Wrapper.m_Player_Kill3;
+        public InputAction @Kill4 => m_Wrapper.m_Player_Kill4;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -207,9 +243,18 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
                 @Evolve.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEvolve;
                 @Evolve.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEvolve;
                 @Evolve.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEvolve;
-                @Kill.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnKill;
-                @Kill.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnKill;
-                @Kill.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnKill;
+                @Kill1.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnKill1;
+                @Kill1.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnKill1;
+                @Kill1.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnKill1;
+                @Kill2.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnKill2;
+                @Kill2.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnKill2;
+                @Kill2.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnKill2;
+                @Kill3.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnKill3;
+                @Kill3.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnKill3;
+                @Kill3.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnKill3;
+                @Kill4.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnKill4;
+                @Kill4.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnKill4;
+                @Kill4.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnKill4;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -217,9 +262,18 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
                 @Evolve.started += instance.OnEvolve;
                 @Evolve.performed += instance.OnEvolve;
                 @Evolve.canceled += instance.OnEvolve;
-                @Kill.started += instance.OnKill;
-                @Kill.performed += instance.OnKill;
-                @Kill.canceled += instance.OnKill;
+                @Kill1.started += instance.OnKill1;
+                @Kill1.performed += instance.OnKill1;
+                @Kill1.canceled += instance.OnKill1;
+                @Kill2.started += instance.OnKill2;
+                @Kill2.performed += instance.OnKill2;
+                @Kill2.canceled += instance.OnKill2;
+                @Kill3.started += instance.OnKill3;
+                @Kill3.performed += instance.OnKill3;
+                @Kill3.canceled += instance.OnKill3;
+                @Kill4.started += instance.OnKill4;
+                @Kill4.performed += instance.OnKill4;
+                @Kill4.canceled += instance.OnKill4;
             }
         }
     }
@@ -236,6 +290,9 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
     public interface IPlayerActions
     {
         void OnEvolve(InputAction.CallbackContext context);
-        void OnKill(InputAction.CallbackContext context);
+        void OnKill1(InputAction.CallbackContext context);
+        void OnKill2(InputAction.CallbackContext context);
+        void OnKill3(InputAction.CallbackContext context);
+        void OnKill4(InputAction.CallbackContext context);
     }
 }

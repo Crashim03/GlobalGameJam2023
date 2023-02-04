@@ -15,9 +15,36 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Kill",
+                    "name": "Kill1",
                     "type": "Button",
                     "id": "981e9b6e-b572-42ef-b6c2-a26d2219f8ed",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Kill2",
+                    "type": "Button",
+                    "id": "d74312fd-e8e7-45b8-a366-5c9d73ea2f66",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Kill3",
+                    "type": "Button",
+                    "id": "9c04e540-bbe9-4ee6-91c9-9fefeb0d7616",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Kill4",
+                    "type": "Button",
+                    "id": "d8553d65-f32c-4a5c-8ea1-5e2f6c3deb06",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -43,40 +70,40 @@
                     "interactions": "Press",
                     "processors": "",
                     "groups": "Keyboard and Mouse",
-                    "action": "Kill",
+                    "action": "Kill1",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "2e70c261-ff48-45cd-bbe3-1ea6f4a28ef9",
+                    "id": "a16301f2-6709-496b-9d09-02976693b149",
                     "path": "<Keyboard>/w",
                     "interactions": "Press",
                     "processors": "",
                     "groups": "Keyboard and Mouse",
-                    "action": "Kill",
+                    "action": "Kill2",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "35822b24-a13a-4e2c-8527-02c08f51a26c",
+                    "id": "9bd77a16-610e-42a0-8e70-a5ae7e0d19d8",
                     "path": "<Keyboard>/e",
                     "interactions": "Press",
                     "processors": "",
                     "groups": "Keyboard and Mouse",
-                    "action": "Kill",
+                    "action": "Kill3",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "34f10104-a1ce-4d0f-8a67-310e79810a3f",
+                    "id": "c1a1e99d-a916-4dce-8e44-f3fc8ae03979",
                     "path": "<Keyboard>/r",
                     "interactions": "Press",
                     "processors": "",
                     "groups": "Keyboard and Mouse",
-                    "action": "Kill",
+                    "action": "Kill4",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
