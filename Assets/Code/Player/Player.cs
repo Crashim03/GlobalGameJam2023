@@ -13,13 +13,14 @@ public class Player : MonoBehaviour
     public GameObject R;
     public Slider slider;
     public float progressBarSpeed;
-    public float health;
+    public float health = 10f;
 
     private bool can_grow = false;
     private Animator anim;
     private int reset_counter = 0;
 
-    private void Awake() {
+    private void Awake()
+    {
         anim = GetComponent<Animator>();
     }
 
@@ -41,15 +42,16 @@ public class Player : MonoBehaviour
     {
         if (context.performed && !can_grow)
         {
-            if(anim.GetBool("Evolve") == true && anim.GetBool("Evolve1") == false)
+            if (anim.GetBool("Evolve") == true && anim.GetBool("Evolve1") == false)
             {
                 anim.Play("Q_Attack_E1_Anim");
             }
-            else if(anim.GetBool("Evolve1") == true)
+            else if (anim.GetBool("Evolve1") == true)
             {
                 anim.Play("Q_Attack_E2_Anim");
             }
-            else{
+            else
+            {
                 anim.Play("Q_Attack_Anim");
             }
             Q.GetComponent<TriggerBehaviour>().KillEnemy();
@@ -62,15 +64,16 @@ public class Player : MonoBehaviour
     {
         if (context.performed && !can_grow)
         {
-            if(anim.GetBool("Evolve") == true && anim.GetBool("Evolve1") == false)
+            if (anim.GetBool("Evolve") == true && anim.GetBool("Evolve1") == false)
             {
                 anim.Play("W_Attack_E1_Anim");
             }
-            else if(anim.GetBool("Evolve1") == true)
+            else if (anim.GetBool("Evolve1") == true)
             {
                 anim.Play("W_Attack_E2_Anim");
             }
-            else{
+            else
+            {
                 anim.Play("W_Attack_Anim");
             }
             W.GetComponent<TriggerBehaviour>().KillEnemy();
@@ -83,15 +86,16 @@ public class Player : MonoBehaviour
     {
         if (context.performed && !can_grow)
         {
-            if(anim.GetBool("Evolve") == true && anim.GetBool("Evolve1") == false)
+            if (anim.GetBool("Evolve") == true && anim.GetBool("Evolve1") == false)
             {
                 anim.Play("E_Attack_E1_Anim");
             }
-            else if(anim.GetBool("Evolve1") == true)
+            else if (anim.GetBool("Evolve1") == true)
             {
                 anim.Play("E_Attack_E2_Anim");
             }
-            else{
+            else
+            {
                 anim.Play("E_Attack_Anim");
             }
             E.GetComponent<TriggerBehaviour>().KillEnemy();
@@ -103,15 +107,16 @@ public class Player : MonoBehaviour
     {
         if (context.performed && !can_grow)
         {
-            if(anim.GetBool("Evolve") == true && anim.GetBool("Evolve1") == false)
+            if (anim.GetBool("Evolve") == true && anim.GetBool("Evolve1") == false)
             {
                 anim.Play("R_Attack_E1_Anim");
             }
-            else if(anim.GetBool("Evolve1") == true)
+            else if (anim.GetBool("Evolve1") == true)
             {
                 anim.Play("R_Attack_E2_Anim");
             }
-            else{
+            else
+            {
                 anim.Play("R_Attack_Anim");
             }
             R.GetComponent<TriggerBehaviour>().KillEnemy();
@@ -121,16 +126,19 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(health >= slider.maxValue)
+        if (health >= slider.maxValue)
         {
-            if(reset_counter == 1)
+            if (reset_counter == 1)
             {
                 anim.SetBool("Evolve1", true);
             }
-            else{
+            else
+            {
                 anim.SetBool("Evolve", true);
             }
             ResetSlider();
+
+            GameObject.Find("Enemy Manager").GetComponent<EnemyManager>().NextLevel();
         }
         Slidin();
         slider.value = health;
@@ -146,7 +154,7 @@ public class Player : MonoBehaviour
 
     private void ResetSlider()
     {
-        reset_counter ++;
+        reset_counter++;
         health = 10;
     }
 
