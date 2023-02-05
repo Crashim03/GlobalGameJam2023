@@ -130,6 +130,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -498500494651587598, guid: 6918aafe2b5a8614d95c5cd3d1788cae, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 688c75c17c116b947b0cd780e33ad4b4, type: 2}
+    - target: {fileID: 1323767536616159951, guid: 6918aafe2b5a8614d95c5cd3d1788cae, type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 38275945}
     - target: {fileID: 3666798841745069544, guid: 6918aafe2b5a8614d95c5cd3d1788cae, type: 3}
       propertyPath: m_Name
       value: Trigger4
@@ -234,6 +242,11 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!95 &38275945 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: -498500494651587598, guid: 6918aafe2b5a8614d95c5cd3d1788cae, type: 3}
+  m_PrefabInstance: {fileID: 38275933}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &328014660
 GameObject:
   m_ObjectHideFlags: 0
@@ -693,6 +706,7 @@ GameObject:
   m_Component:
   - component: {fileID: 530164919}
   - component: {fileID: 530164918}
+  - component: {fileID: 530164920}
   m_Layer: 0
   m_Name: Space
   m_TagString: Untagged
@@ -767,6 +781,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &530164920
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 530164917}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &556579060
 GameObject:
   m_ObjectHideFlags: 0
@@ -842,6 +876,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -498500494651587598, guid: 6918aafe2b5a8614d95c5cd3d1788cae, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: f979188e34e51914bad75cf4ac7581a5, type: 2}
+    - target: {fileID: 1323767536616159951, guid: 6918aafe2b5a8614d95c5cd3d1788cae, type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 671939827}
     - target: {fileID: 3666798841745069544, guid: 6918aafe2b5a8614d95c5cd3d1788cae, type: 3}
       propertyPath: m_Name
       value: Trigger3
@@ -946,6 +988,11 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!95 &671939827 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: -498500494651587598, guid: 6918aafe2b5a8614d95c5cd3d1788cae, type: 3}
+  m_PrefabInstance: {fileID: 671939815}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &716885652
 GameObject:
   m_ObjectHideFlags: 0
@@ -1492,6 +1539,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -498500494651587598, guid: 6918aafe2b5a8614d95c5cd3d1788cae, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 14eba81ed12061149a2e0d6e6b1a8a87, type: 2}
+    - target: {fileID: 1323767536616159951, guid: 6918aafe2b5a8614d95c5cd3d1788cae, type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 1516548768}
     - target: {fileID: 3666798841745069544, guid: 6918aafe2b5a8614d95c5cd3d1788cae, type: 3}
       propertyPath: m_Name
       value: Trigger2
@@ -1596,6 +1651,11 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!95 &1516548768 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: -498500494651587598, guid: 6918aafe2b5a8614d95c5cd3d1788cae, type: 3}
+  m_PrefabInstance: {fileID: 1516548756}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1543295027
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2539,6 +2599,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -498500494651587598, guid: 6918aafe2b5a8614d95c5cd3d1788cae, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 7043b26b52bc9734195b68ec7f311343, type: 2}
+    - target: {fileID: 1323767536616159951, guid: 6918aafe2b5a8614d95c5cd3d1788cae, type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 2231470083039902566}
     - target: {fileID: 3666798841745069544, guid: 6918aafe2b5a8614d95c5cd3d1788cae, type: 3}
       propertyPath: m_Name
       value: Trigger
@@ -2647,3 +2715,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!95 &2231470083039902566 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: -498500494651587598, guid: 6918aafe2b5a8614d95c5cd3d1788cae, type: 3}
+  m_PrefabInstance: {fileID: 2231470083039902554}
+  m_PrefabAsset: {fileID: 0}

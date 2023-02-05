@@ -4,10 +4,18 @@ using UnityEngine;
 
 public class TriggerBehaviour : MonoBehaviour
 {
+    public bool pressed = false;
+    public Animator anim;
 
     private bool can_kill = false;
     private GameObject enemy;
     public AudioSource SoundEffect;
+
+    private void Update()
+    {
+        Debug.Log(pressed);
+        anim.SetBool("Pressed", pressed);
+    }
 
     public void KillEnemy()
     {

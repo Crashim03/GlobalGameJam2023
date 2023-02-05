@@ -27,6 +27,12 @@ public class Player : MonoBehaviour
 
     public void Evolve(InputAction.CallbackContext context)
     {
+        if (context.started)
+        {
+            can_grow = true;
+            Debug.Log("comecou");
+        }
+
         if (context.performed)
         {
             can_grow = true;
@@ -41,6 +47,12 @@ public class Player : MonoBehaviour
 
     public void Kill1(InputAction.CallbackContext context)
     {
+        if (context.started)
+            Q.GetComponent<TriggerBehaviour>().pressed = true;
+
+        if (context.canceled)
+            Q.GetComponent<TriggerBehaviour>().pressed = false;
+
         if (context.performed && !can_grow)
         {
             if (anim.GetBool("Evolve") == true && anim.GetBool("Evolve1") == false)
@@ -63,6 +75,12 @@ public class Player : MonoBehaviour
 
     public void Kill2(InputAction.CallbackContext context)
     {
+        if (context.started)
+            W.GetComponent<TriggerBehaviour>().pressed = true;
+
+        if (context.canceled)
+            W.GetComponent<TriggerBehaviour>().pressed = false;
+
         if (context.performed && !can_grow)
         {
             if (anim.GetBool("Evolve") == true && anim.GetBool("Evolve1") == false)
@@ -85,6 +103,12 @@ public class Player : MonoBehaviour
 
     public void Kill3(InputAction.CallbackContext context)
     {
+        if (context.started)
+            E.GetComponent<TriggerBehaviour>().pressed = true;
+
+        if (context.canceled)
+            E.GetComponent<TriggerBehaviour>().pressed = false;
+
         if (context.performed && !can_grow)
         {
             if (anim.GetBool("Evolve") == true && anim.GetBool("Evolve1") == false)
@@ -106,6 +130,13 @@ public class Player : MonoBehaviour
 
     public void Kill4(InputAction.CallbackContext context)
     {
+        if (context.started)
+            R.GetComponent<TriggerBehaviour>().pressed = true;
+
+        if (context.canceled)
+            R.GetComponent<TriggerBehaviour>().pressed = false;
+
+
         if (context.performed && !can_grow)
         {
             if (anim.GetBool("Evolve") == true && anim.GetBool("Evolve1") == false)
