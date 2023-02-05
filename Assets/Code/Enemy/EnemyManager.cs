@@ -52,6 +52,7 @@ public class EnemyManager : MonoBehaviour
         }
         else
         {
+            GameObject.FindObjectOfType<Scoreboard>().GetComponent<Scoreboard>().bestScore = Time.timeSinceLevelLoad;
             SceneManager.LoadScene("VictoryMenu");
         }
     }

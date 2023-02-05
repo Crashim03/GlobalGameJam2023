@@ -13,6 +13,7 @@ public class MenuButtons : MonoBehaviour
 
     public void ReturnMainMenu()
     {
+        Destroy(GameObject.FindObjectOfType<Scoreboard>());
         SceneManager.LoadScene("MainMenu");
         Debug.Log("RETURN TO MAIN MENU!");
     }
