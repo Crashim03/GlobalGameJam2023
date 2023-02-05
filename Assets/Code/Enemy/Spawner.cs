@@ -7,6 +7,7 @@ public class Spawner : MonoBehaviour
     public float speed = 1f;
     public GameObject enemyPrefab;
     public bool canSpawn = true;
+    private bool boolean;
 
     public void SpawnEnemy()
     {
@@ -15,5 +16,7 @@ public class Spawner : MonoBehaviour
         enemy.GetComponent<Enemy>().playerPosition = GameObject.Find("Player").transform;
         enemy.GetComponent<Enemy>().speed = speed;
         enemy.GetComponent<Enemy>().Spawner = GameObject.Find(gameObject.name);
+        boolean = (Random.value > 0.5f);
+        enemy.GetComponent<Enemy>().anim.SetBool("W_or_B", boolean);
     }
 }

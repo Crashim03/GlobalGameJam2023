@@ -90,9 +90,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7658177991317281758}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.34, y: -0.11, z: -0.109580986}
-  m_LocalScale: {x: 5, y: 5, z: 5}
-  m_ConstrainProportionsScale: 1
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7658177991579526971}
   m_Father: {fileID: 0}
@@ -111,8 +111,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.40230393, y: 0.02366375}
-  m_Size: {x: 1.0003552, y: 0.16193314}
+  m_Offset: {x: 0.51511264, y: -0.008955741}
+  m_Size: {x: 0.9813304, y: 0.096695565}
   m_Direction: 1
 --- !u!50 &2417322005218286196
 Rigidbody2D:
@@ -148,9 +148,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 2417322005218286196}
-  position: {fileID: 0}
+  position: {fileID: 7658177991317281757}
   playerPosition: {fileID: 0}
-  Spawner: {fileID: 0}
+  Spawner: {fileID: 3137035136233171671, guid: 34b476ae04f47254296ce668a221a3b6, type: 3}
   damage: 50
   speed: 5
 --- !u!1 &7658177991579526970
@@ -230,7 +230,7 @@ LineRenderer:
   m_SortingOrder: 0
   m_Positions:
   - {x: 0, y: 0, z: 0}
-  - {x: 4.814039, y: 0, z: 1}
+  - {x: 5, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -284,7 +284,7 @@ LineRenderer:
     textureMode: 0
     shadowBias: 0.5
     generateLightingData: 0
-  m_UseWorldSpace: 1
+  m_UseWorldSpace: 0
   m_Loop: 0
 --- !u!114 &7658177991579526969
 MonoBehaviour:
