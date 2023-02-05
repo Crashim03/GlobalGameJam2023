@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     public Transform playerPosition;
     public GameObject Spawner;
     public float damage = 50f;
+    public Animator anim;
 
     public float speed = 5f;
 

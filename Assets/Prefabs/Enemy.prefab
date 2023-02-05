@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8584495127620833207}
   - component: {fileID: 8584495127620833204}
   - component: {fileID: 8584495127620833205}
+  - component: {fileID: -668556733546995431}
   m_Layer: 7
   m_Name: Enemy
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2120991411927014024}
-  m_LocalRotation: {x: -0, y: -0, z: -0.31385627, w: 0.9494706}
+  m_LocalRotation: {x: 0, y: 0, z: -0.3138599, w: 0.9494693}
   m_LocalPosition: {x: -5.37, y: -2.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -81,7 +82,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 5.4, y: 5.4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -100,8 +101,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.99999994, y: 2}
+  m_Offset: {x: -0.20820415, y: 1.6656334}
+  m_Size: {x: 0.91671824, y: 1.9444785}
   m_Direction: 0
 --- !u!50 &8584495127620833204
 Rigidbody2D:
@@ -141,4 +142,25 @@ MonoBehaviour:
   playerPosition: {fileID: 0}
   Spawner: {fileID: 0}
   damage: 10
+  anim: {fileID: -668556733546995431}
   speed: 5
+--- !u!95 &-668556733546995431
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2120991411927014024}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3b1798ef7a0f0894ca23cb68d2901c58, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
