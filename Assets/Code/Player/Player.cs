@@ -16,6 +16,9 @@ public class Player : MonoBehaviour
     public float progressBarSpeed;
     public float health = 10f;
 
+    public Animator regadorAnim;
+    public ParticleSystem ps;
+
     private bool can_grow = false;
     private Animator anim;
     private int reset_counter = 0;
@@ -27,14 +30,21 @@ public class Player : MonoBehaviour
 
     public void Evolve(InputAction.CallbackContext context)
     {
+        if(context.started)
+        {
+            regadorAnim.SetBool("Regar", true);
+        }
         if (context.performed)
         {
+            ps.Play();
             can_grow = true;
             Debug.Log("comecou");
         }
         if (context.canceled)
         {
+            ps.Stop();
             can_grow = false;
+            regadorAnim.SetBool("Regar", false);
             Debug.Log("temrinou");
         }
     }
@@ -124,7 +134,9 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void FixedUpdate() { Slidin(); }
+    private void FixedUpdate() {
+        Slidin();
+    }
 
     private void Update()
     {
