@@ -206,7 +206,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 137896243}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1154517521}
+        m_TargetAssemblyTypeName: MenuButtons, Assembly-CSharp
+        m_MethodName: Retry
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &137896243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -725,7 +737,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 848747170}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1154517521}
+        m_TargetAssemblyTypeName: MenuButtons, Assembly-CSharp
+        m_MethodName: ReturnMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &848747170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -773,8 +797,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1154517520}
+  - component: {fileID: 1154517521}
   m_Layer: 5
-  m_Name: Control Menu
+  m_Name: Game Over Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -789,7 +814,7 @@ RectTransform:
   m_GameObject: {fileID: 1154517519}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.2553, y: 2.2553, z: 2.2553}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 769225074}
@@ -805,6 +830,18 @@ RectTransform:
   m_AnchoredPosition: {x: 5.047058, y: -0.076301}
   m_SizeDelta: {x: 364.9723, y: 328.85}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1154517521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1154517519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d89d65a4a74dff4e8f7a0bacb7c4a53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1283089745
 GameObject:
   m_ObjectHideFlags: 0
