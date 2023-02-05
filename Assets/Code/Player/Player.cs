@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine;
 
@@ -120,12 +121,14 @@ public class Player : MonoBehaviour
                 anim.Play("R_Attack_Anim");
             }
             R.GetComponent<TriggerBehaviour>().KillEnemy();
-            Debug.Log("Poe te nas putas minhoca de merda");
         }
     }
 
-    private void FixedUpdate()
+    private void FixedUpdate() { Slidin(); }
+
+    private void Update()
     {
+        slider.value = health;
         if (health >= slider.maxValue)
         {
             if (reset_counter == 1)
@@ -140,8 +143,10 @@ public class Player : MonoBehaviour
 
             GameObject.Find("Enemy Manager").GetComponent<EnemyManager>().NextLevel();
         }
-        Slidin();
-        slider.value = health;
+        else if (health <= 0)
+        {
+            SceneManager.LoadScene("GameOverMenu");
+        }
     }
 
     private void Slidin()
