@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
 
     private bool can_grow = false;
     private Animator anim;
+    public Animator SpaceAnim;
     private int reset_counter = 0;
 
     private void Awake()
@@ -33,6 +34,8 @@ public class Player : MonoBehaviour
         if (context.started)
         {
             regadorAnim.SetBool("Regar", true);
+            SpaceAnim.SetBool("Pressed", true);
+
         }
         if (context.performed)
         {
@@ -42,6 +45,7 @@ public class Player : MonoBehaviour
         }
         if (context.canceled)
         {
+            SpaceAnim.SetBool("Pressed", false);
             ps.Stop();
             can_grow = false;
             regadorAnim.SetBool("Regar", false);
