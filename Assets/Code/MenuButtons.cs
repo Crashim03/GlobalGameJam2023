@@ -7,6 +7,7 @@ public class MenuButtons : MonoBehaviour
 {
     public void PlayGame()
     {
+        Destroy(GameObject.FindObjectOfType<Scoreboard>());
         SceneManager.LoadScene("MainScene");
         Debug.Log("START GAME!");
     }
