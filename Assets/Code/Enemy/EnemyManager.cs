@@ -11,6 +11,7 @@ public class EnemyManager : MonoBehaviour
     public float minSpeed = 1f;
 
     public GameObject[] spawners;
+    public AudioSource soundEffect;
     public float[] spawnTimes;
     public int level = 1;
 
@@ -43,6 +44,7 @@ public class EnemyManager : MonoBehaviour
     {
         if (level < 3)
         {
+            soundEffect.Play();
             level++;
             maxSpeed += 2f;
             minSpeed += 1f;
